@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <!-- Required meta tags -->
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" />
+        <!--<link href="style.css" rel="stylesheet" type="text/css" />-->
+        <style>
+            /* CSS */
+            
+            #gray {
+                background-color: lightgray;
+            }
+            
+            #red {
+                color: red;
+            }
+            
+            #green {
+                color: green;
+            }
+            
+            #blue {
+                color: blue;
+            }
+            
+            #orange {
+                color: orange;
+            }
+            
+            .underline {
+                text-decoration: underline;
+            }
+            
+        </style>
+        
+        <title>03-demo</title>
+    </head>
+    <body>
+        <!-- HTML -->
+        
+        <div id="gray">
+            <p id="red">Red</p>
+            <!--document.querySelector("#gray").insertBefore(element,green)-->
+            <p id="green">Green</p>
+            <p id="blue">Blue</p>
+            <!--document.querySelector("#gray").appendChild() ends up here-->
+        </div>
+        
+        
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js"></script>
+        <!--<script src="script.js"></script>-->
+        <script>
+            // JS
+            
+            // append = add to the end
+            // document.write("<h1 id='orange' class='underline'>Heading1</h1>");
+            
+            var h1 = document.createElement("h1");
+            h1.innerHTML = "Heading 1";
+            // document.body.appendChild(h1);
+            // document.querySelector("#gray").appendChild(h1);
+            h1.id = "orange";
+            h1.classList.add("underline");
+            
+            var greenPara = document.querySelector("#green");
+            var grayBox = document.querySelector("#gray");
+            // grayBox.insertBefore(h1,greenPara);
+            document.body.insertBefore(h1,grayBox);
+            
+        </script>
+        
+        <!--document.body.appendChild() ends up here-->
+    </body>
+</html>

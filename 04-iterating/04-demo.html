@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <!-- Required meta tags -->
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" />
+        <!--<link href="style.css" rel="stylesheet" type="text/css" />-->
+        <style>
+            /* CSS */
+            
+            p {
+                /*background-color: gray;*/
+                margin: 0;
+                padding: 10px;
+            }
+            
+        </style>
+        
+        <title>04-demo</title>
+    </head>
+    <body>
+        <!-- HTML -->
+        <ul id="groceries">
+            <!--populated later-->
+        </ul>
+        
+        <p>Hello World</p>
+        <p>Hello World</p>
+        <p>Hello World</p>
+        <p>Hello World</p>
+        <p>Hello World</p>
+        <p>Hello World</p>
+        <p>Hello World</p>
+        <p>Hello World</p>
+        <p>Hello World</p>
+        
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js"></script>
+        <!--<script src="script.js"></script>-->
+        <script>
+            // JS
+            
+            var groceries = ["milk","bread","eggs"];
+            var groceriesList = document.querySelector("#groceries");
+            
+            // traditional 'for' loop
+            // for(var i = 0; i < groceries.length; i++){
+            //     // groceries[i]; // the current grocery
+            //     var newItem = document.createElement("li");
+            //     newItem.innerHTML = groceries[i];
+            //     groceriesList.appendChild(newItem);
+            // }
+            
+            // refactored using .forEach()
+            groceries.forEach(function(grocery){
+                // now you can use `grocery` which represents the current grocery
+                var newItem = document.createElement("li");
+                newItem.innerHTML = grocery;
+                groceriesList.appendChild(newItem);
+            });
+            
+            
+            // paragraphs using .forEach()
+            var paragraphs = document.querySelectorAll("p");
+            // console.log(paragraphs);
+            // paragraphs.forEach(function(paragraph,i){
+            //     paragraph.style.backgroundColor = "gray";
+            //     if(i % 2 == 0){ // 0, 2, 4, 6, etc
+            //         paragraph.style.backgroundColor = "lightgray";
+            //     } else { // 1, 3, 5, 7, etc
+            //         paragraph.style.backgroundColor = "gray";
+            //     }
+            // });
+            
+            // refactored using traditional 'for' loop
+            for(var i = 0; i < paragraphs.length; i++){
+                paragraphs[i].style.backgroundColor = "gray";
+                if(i % 2 == 0){ // 0, 2, 4, 6, etc
+                    paragraphs[i].style.backgroundColor = "lightgray";
+                } else { // 1, 3, 5, 7, etc
+                    paragraphs[i].style.backgroundColor = "gray";
+                }
+            }
+            
+            
+        </script>
+    </body>
+</html>
