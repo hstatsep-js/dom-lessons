@@ -10,7 +10,7 @@
         <style>
             /* CSS */
             p {
-                /*display: none;*/
+                display: none;
             }
             
         </style>
@@ -20,17 +20,17 @@
     <body>
         <!-- HTML -->
         
-        text
+        <!-- text -->
         <input type="text" id="guess"><br><br>
         <p>You guessed the password!</p>
         
-        radio
+        <!-- radio -->
         <input type="radio" name="color" value="red" id="redRadio"> Red<br>
         <input type="radio" name="color" value="green" id="greenRadio"> Green<br>
         <input type="radio" name="color" value="blue" id="blueRadio"> Blue<br>
         
         
-        select / dropdown
+        <!-- select / dropdown -->
         <select id="language">
             <option value="html">HTML</option>
             <option value="css">CSS</option>
@@ -45,50 +45,26 @@
             // JS
             
             // text
-            // document.querySelector("#guess").addEventListener("keyup",function(event){
-            //     // console.log(event.target.value)
-            //     if(event.target.value == "password"){
-            //         document.querySelector("p").style.display = "block";
-            //     }
-            // });
-            
-            // radio
-            // var colorRadios = document.querySelectorAll("input[name='color']");
-            // colorRadios.forEach(function(colorRadio){
-            //     colorRadio.addEventListener("click",function(event){
-            //         alert("You clicked " + event.target.value);
-            //     });
-            // });
-            
-            // select / dropdown
-            // document.querySelector("#language").addEventListener("change",function(event){
-            //     alert("You selected " + event.target.value);
-            // })
-            
-            // Madlib
-            // There once was a ___ named ___.
-            // when GO is pressed, grab 3 inputs, use them
-            document.querySelector("button").addEventListener("click",function(){
-                var madlib = "There once was a ";
-                
-                madlib += document.querySelector("#animal").value; // 1st input
-                madlib += " named ";
-                madlib += document.querySelector("#animalName").value; // 2nd input
-                // console.log(madlib);
-                
-                // var madlibParagraph = document.createElement("p");
-                var madlibParagraph = document.querySelector("p");
-                madlibParagraph.innerHTML = madlib;
-                // document.body.appendChild(madlibParagraph);
-                
-                var size = document.querySelector('input[name="size"]:checked').value; // 3rd input
-                // console.log(size);
-                if(size == "small"){
-                    madlibParagraph.style.fontSize = "6px";
-                } else if (size == "large"){
-                    madlibParagraph.style.fontSize = "60px";
+            document.querySelector("#guess").addEventListener("keyup",function(event){
+                // console.log(event.target.value)
+                if(event.target.value == "password"){
+                    document.querySelector("p").style.display = "block";
                 }
             });
+            
+            // radio
+            var colorRadios = document.querySelectorAll("input[name='color']");
+            colorRadios.forEach(function(colorRadio){
+                colorRadio.addEventListener("click",function(event){
+                    alert("You clicked " + event.target.value);
+                });
+            });
+            
+            // select / dropdown
+            document.querySelector("#language").addEventListener("change",function(event){
+                alert("You selected " + event.target.value);
+            })
+            
             
         </script>
     </body>
